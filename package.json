@@ -13,14 +13,20 @@
     "lint": "eslint src",
     "docs": "apidoc -i src -o docs && apidoc-markdown -p docs -o DOCS.md",
     "postdocs": "opn docs/index.html",
-    "postinstall": "cp -n .env.example .env | true"
+    "postinstall": "cp -n .env.example .env | true",
+    "pretest": "npm install"
   },
   "jest": {
     "testEnvironment": "node",
     "setupTestFrameworkScriptFile": "<rootDir>/test/setup.js",
     "reporters": [
       "default",
-      ["jest-tap-reporter", { "filePath": "unit.tap" }]
+      [
+        "jest-tap-reporter",
+        {
+          "filePath": "unit.tap"
+        }
+      ]
     ]
   },
   "devDependencies": {
